@@ -19,7 +19,12 @@ function linkedList() {
   function append(val) {
     if (_head == null) _head = node(val, null);
     else {
-      _head = node(val, _head);
+      let curr = _head;
+      while (curr.next) {
+        curr = curr.next;
+      }
+
+      curr.next = node(val, null);
     }
   }
 
